@@ -3,7 +3,7 @@
     <div v-if="getActive"><slot name="icon-active"></slot></div>
     <div v-else><slot name="icon"></slot></div>
     <div :style="getActiveText">
-      <slot name="text"></slot>
+      <slot name="text"></slot> 
     </div>
   </div>
 </template>
@@ -48,5 +48,8 @@ export default {
 .tabbar-item img {
   width: 24px;
   height: 24px;
+  vertical-align: middle;
+  margin-bottom: 3px;
+  margin-top: 2px;
 }
 </style>

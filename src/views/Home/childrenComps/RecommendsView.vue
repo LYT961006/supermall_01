@@ -1,10 +1,10 @@
 <template>
   <div class="recommends">
-    <div v-for="(item,i) in recommends" class="recommends-item" :key="i">
+    <div v-for="(item, i) in recommends" class="recommends-item" :key="i">
       <a :href="item.link">
         <img :src="item.image" alt="" />
+        <div>{{ item.title }}</div>
       </a>
-       <div>{{ item.title }}</div>
     </div>
   </div>
 </template>
@@ -30,18 +30,22 @@ export default {
 </script>
 <style scoped>
 .recommends {
-    display: flex;
-    font-size: 12px;
-    text-align: center;
-    padding: 10px 0 20px;
-    border-bottom: 10px solid #eee;
+  display: flex;
+  font-size: 12px;
+  text-align: center;
+  padding: 10px 0 20px;
+  border-bottom: 10px solid #eee;
 }
 .recommends-item {
-    flex: 1;
+  flex: 1;
 }
 .recommends-item img {
-    width: 70px;
-    height: 70px;
-    margin-bottom: 10px;
+  width: 70px;
+  height: 70px;
+  margin-bottom: 10px;
+}
+.recommends-item a {
+    text-decoration: none;
+    color: #000;
 }
 </style>

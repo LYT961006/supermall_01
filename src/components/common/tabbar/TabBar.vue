@@ -22,6 +22,7 @@ export default {
   position: fixed;
   left: 0;
   right: 0;
+  font-size: 12px;
   bottom: 0;
   text-align: center;
   background-color: #f6f6f6;
