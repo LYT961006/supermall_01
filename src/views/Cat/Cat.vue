@@ -1,6 +1,8 @@
 <template>
-  <div class="wrapper" ref="aaa">
-    <ul class="content">
+  <div ref="wrapper" class="wrapper">
+    <ul>
+      <button @click="btnClick">按钮</button>
+      <div @click="divClick">哈哈哈</div>
       <li>1</li>
       <li>1</li>
       <li>1</li>
@@ -57,10 +59,29 @@ export default {
   watch: {},
   created() {},
   mounted() {
-    console.log(this.$refs.aaa);
-    this.scroll = new BScroll(this.$refs.aaa, {});
+    this.scroll = new BScroll(this.$refs.wrapper, {
+      probeType: 3,
+      pullUpLoad: true,
+      click:true
+    });
+    this.scroll.on("scroll", pos => {
+      // console.log(pos);
+    });
+    this.scroll.on("pullingUp", () => {
+      console.log("上拉加载更多");
+      setTimeout(() => {
+        this.scroll.finishPullUp();
+      }, 2000);
+    });
   },
-  methods: {}
+  methods: {
+    btnClick() {
+      console.log("btnClick");
+    },
+    divClick() {
+      console.log("divClick");
+    }
+  }
 };
 </script>
 <style scoped>
@@ -68,6 +89,5 @@ export default {
   height: 200px;
   background-color: tomato;
   overflow: hidden;
-  /* overflow-y: scroll; */
 }
 </style>

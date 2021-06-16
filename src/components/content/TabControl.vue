@@ -32,6 +32,7 @@ export default {
   mounted() {},
   methods: {
     tabClick(i) {
+      console.log(i);
       this.currentIndex = i;
       this.$emit('tab-click',i)
     }
